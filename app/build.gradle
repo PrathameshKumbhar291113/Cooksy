@@ -1,0 +1,83 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.dagger.hilt.project.level.dependency)
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    alias(libs.plugins.google.gms.google.services)
+}
+
+android {
+    namespace 'com.prathameshkumbhar.cooksy'
+    compileSdk 34
+
+    buildFeatures{
+        viewBinding true
+        buildConfig true
+    }
+
+    defaultConfig {
+        applicationId "com.prathameshkumbhar.cooksy"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "COOKSY_BASE_URL", "\"${cooksy_base_url}\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            buildConfigField "String", "COOKSY_BASE_URL", "\"${cooksy_base_url}\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.firebase.auth
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    //other dependencies
+    kapt libs.hilt.android.compiler
+    implementation libs.hilt.android
+    implementation libs.hilt.navigation
+    implementation libs.lifecycle.view.model
+    implementation libs.lifecycle.live.data
+    implementation libs.lifecycle.runtime
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    implementation libs.retrofit
+    implementation libs.retrofit.gson.converter
+    implementation libs.okhttp.logging.interceptor
+    implementation libs.gson
+    implementation libs.coil
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx
+    implementation libs.splitties
+    implementation libs.circular.progress.bar
+}
