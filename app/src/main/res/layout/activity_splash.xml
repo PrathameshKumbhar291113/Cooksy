@@ -8,20 +8,49 @@
     android:background="@color/light_olive_green"
     tools:context=".SplashActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/cooksyLogo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imageContainers"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        android:elevation="3dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/cooksy_logo"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toTopOf="@id/title"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cooksyLogoV1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_margin="20dp"
+            android:elevation="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cooksy_logo_v1"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cooksyLogo"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_margin="20dp"
+            android:elevation="5dp"
+            android:visibility="visible"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cooksy_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
@@ -36,7 +65,7 @@
         app:layout_constraintBottom_toTopOf="@id/desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cooksyLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageContainers" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/desc"
