@@ -11,12 +11,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/imageContainers"
         android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:layout_height="600dp"
         app:layout_constraintBottom_toTopOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cooksyLogoV2"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_margin="20dp"
+            android:elevation="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cooksy_logo_v2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/cooksyLogoV1"
@@ -62,10 +78,12 @@
         android:textColor="@color/white"
         android:textSize="45dp"
         app:fontFamily="@font/lexend_bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageContainers" />
+        app:layout_constraintTop_toBottomOf="@+id/imageContainers"
+        tools:ignore="HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/desc"
@@ -77,6 +95,7 @@
         android:textColor="@color/white"
         android:textSize="25dp"
         app:fontFamily="@font/lexend_light"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
