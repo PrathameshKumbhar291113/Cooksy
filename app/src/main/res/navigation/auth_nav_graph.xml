@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/signinSignupFragment">
+
+    <fragment
+        android:id="@+id/signinSignupFragment"
+        android:name="com.prathameshkumbhar.cooksy.feature.auth.fragments.SigninSignupFragment"
+        android:label="fragment_signin_signup"
+        tools:layout="@layout/fragment_signin_signup" />
+    <fragment
+        android:id="@+id/verifyOtpFragment"
+        android:name="com.prathameshkumbhar.cooksy.feature.auth.fragments.VerifyOtpFragment"
+        android:label="fragment_verify_otp"
+        tools:layout="@layout/fragment_verify_otp" />
+</navigation>

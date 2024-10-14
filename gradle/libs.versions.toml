@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.0"
+firebaseBom = "33.4.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -24,9 +25,14 @@ splittiesVersion = "3.0.0"
 circularProgressBarVersion = "3.1.0"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.0.0"
+roomDbVersion = "2.6.1"
+firebaseAnalytics = "22.1.2"
+firebaseCrashlytics = "19.2.0"
+googleFirebaseCrashlytics = "3.0.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -52,10 +58,17 @@ androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref
 splitties = { module = "com.louiscad.splitties:splitties-fun-pack-android-material-components", version.ref = "splittiesVersion" }
 navigation-safe-args-project-level-dependency = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsVersion" }
 circular-progress-bar = { module = "com.mikhaellopez:circularprogressbar", version.ref = "circularProgressBarVersion" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomDbVersion" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomDbVersion" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomDbVersion" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "roomDbVersion" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt-project-level-dependency = {id = "com.google.dagger.hilt.android", version.ref = "daggerHiltVersion"}
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
