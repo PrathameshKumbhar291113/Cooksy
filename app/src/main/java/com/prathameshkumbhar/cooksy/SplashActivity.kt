@@ -2,11 +2,12 @@ package com.prathameshkumbhar.cooksy
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.prathameshkumbhar.cooksy.databinding.ActivitySplashBinding
 import com.prathameshkumbhar.cooksy.feature.auth.AuthActivity
-import com.prathameshkumbhar.cooksy.utils.changeStatusBarColor
+import com.prathameshkumbhar.cooksy.utils.hideStatusBarFromActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -18,8 +19,9 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivitySplashBinding.inflate(layoutInflater)
-        changeStatusBarColor(window, this, R.color.olive_green)
+        hideStatusBarFromActivity(window)
         setContentView(binding.root)
 
         navigateToAuthActivity()
